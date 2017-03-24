@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+{{License}}
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Codilar_Analytics::analytics" title="Analytics" module="Codilar_Analytics"  sortOrder="20" dependsOnModule="Codilar_Analytics" action="codilar_analytics/index/index" resource="Codilar_Analytics::analytics"/>
+        <!--AddMenu-->
+    </menu>
+</config>

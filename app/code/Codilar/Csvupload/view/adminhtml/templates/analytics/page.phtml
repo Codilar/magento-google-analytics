@@ -1,0 +1,129 @@
+<?php
+
+
+
+?>
+<main id="anchor-content" class="page-content"><div id="page:main-container" class="page-columns"><div class="admin__old"><div id="container" class="main-col">
+
+<form action="" method="" id="" name="" enctype="multipart/form-data">
+<?php echo $block->getBlockHtml('formkey')?>
+
+    <table class="data-grid" id="sales_transactions_grid_table">
+    <!-- Rendering column set -->
+        <thead>
+        <tr>
+             <th class="data-grid-th   col-period last col-created_at"><span>Google Analytics</span></th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr class="data-grid-tr-no-data even" data-role="row">
+                <td class="empty-text" colspan="12">
+                    <div id="embed-api-auth-container">test</div>
+                    <div id="chart-container">best</div>
+                    <div id="view-selector-container">hello</div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</form>
+
+            </div></div></div>
+<div style="background-color: lightgrey">
+</div>
+
+</main>
+
+<script>
+    require([
+        'jquery',
+        'mage/mage'
+    ], function($){
+        (function(w,d,s,g,js,fs){
+            g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+            js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+            js.src='https://apis.google.com/js/platform.js';
+            fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+        }(window,document,'script'));
+
+        // GA
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)
+                [0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-96125309-1', 'auto') ;
+
+        ga('send', 'pageview');
+
+        // analytics page
+        ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+        gapi.analytics.ready(function() {
+
+            /**
+             * Authorize the user immediately if the user has already granted access.
+             * If no access has been created, render an authorize button inside the
+             * element with the ID "embed-api-auth-container".
+             */
+            gapi.analytics.auth.authorize({
+                container: 'embed-api-auth-container',
+                clientid: clientId
+            });
+
+
+            /**
+             * Create a new ViewSelector instance to be rendered inside of an
+             * element with the id "view-selector-container".
+             */
+            var viewSelector = new gapi.analytics.ViewSelector({
+                container: 'view-selector-container'
+            });
+
+            // Render the view selector to the page.
+            viewSelector.execute();
+
+
+            /**
+             * Create a new DataChart instance with the given query parameters
+             * and Google chart options. It will be rendered inside an element
+             * with the id "chart-container".
+             */
+            var dataChart = new gapi.analytics.googleCharts.DataChart({
+                query: {
+                    metrics: 'ga:sessions',
+                    dimensions: 'ga:date',
+                    'start-date': '30daysAgo',
+                    'end-date': 'yesterday'
+                },
+                chart: {
+                    container: 'chart-container',
+                    type: 'LINE',
+                    options: {
+                        width: '100%'
+                    }
+                }
+            });
+
+
+            /**
+             * Render the dataChart on the page whenever a new view is selected.
+             */
+            viewSelector.on('change', function(ids) {
+                dataChart.set({query: {ids: ids}}).execute();
+            });
+
+        });
+        });
+
+    });
+</script>
+
+
+
+
+
