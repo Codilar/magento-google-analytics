@@ -3,19 +3,18 @@
  * Created by Codilar Technologies Pvt Ltd.
  * User: Mohammad Mujassam
  * Date: 24/3/17
- * Time: 11:22 AM
+ * Time: 6:41 PM
  */
-
-namespace Codilar\Analytics\Controller\Adminhtml\Index;
-
+namespace  Codilar\Analytics\Controller\Adminhtml\Analytics;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\View\Result\PageFactory;
 
 class Index extends Action
 {
+
+
     /**
      * @var PageFactory
      */
@@ -29,21 +28,26 @@ class Index extends Action
         Context $context,
         PageFactory $resultPageFactory
     ) {
-        die("test");
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
     }
 
     /**
-     * Dispatch request
+     * Index action
      *
-     * @return \Magento\Framework\Controller\ResultInterface|ResponseInterface
-     * @throws \Magento\Framework\Exception\NotFoundException
+     * @return \Magento\Backend\Model\View\Result\Page
      */
     public function execute()
     {
-        die('hello');
+        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        $resultPage = $this->resultPageFactory->create();
+        $resultPage->setActiveMenu('Codilar_Analytics::Analytics');
+        $resultPage->getConfig()->getTitle()->prepend(__('Analytics'));
         $this->_view->loadLayout();
         $this->_view->renderLayout();
     }
+
+
+
+
 }

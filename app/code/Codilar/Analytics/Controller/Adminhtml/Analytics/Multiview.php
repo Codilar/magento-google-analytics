@@ -1,13 +1,18 @@
 <?php
-namespace  Codilar\Csvupload\Controller\Adminhtml\Analytics;
+/**
+ * Created by Codilar Technologies Pvt Ltd.
+ * User: Mohammad Mujassam
+ * Date: 24/3/17
+ * Time: 6:41 PM
+ */
 
+namespace Codilar\Analytics\Controller\Adminhtml\Analytics;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Backend\App\Action;
 
-class Index extends \Magento\Backend\App\Action
+class Multiview extends Action
 {
-
-
     /**
      * @var PageFactory
      */
@@ -34,25 +39,10 @@ class Index extends \Magento\Backend\App\Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Codilar_Csvupload::Csvupload');
-       // $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
-      //  $resultPage->addBreadcrumb(__('Manage Blog Posts'), __('Manage Blog Posts'));
+        $resultPage->setActiveMenu('Codilar_Analytics::Analytics');
         $resultPage->getConfig()->getTitle()->prepend(__('Analytics'));
         $this->_view->loadLayout();
         $this->_view->renderLayout();
-      //  return $resultPage;
     }
-
-
-    /**
-     * Is the user allowed to view the blog post grid.
-     *
-     * @return bool
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Codilar_Csvupload::Csvupload');
-    }
-
 
 }
