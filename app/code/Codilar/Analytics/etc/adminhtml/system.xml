@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="200">
+            <label>Codilar Settings</label>
+        </tab>
+        <section id="codilar_analytics" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Codilar Analytics</label>
+            <tab>codilar</tab>
+            <resource>Codilar_Analytics::config</resource>
+            <group id="analytics" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Analytics</label>
+                <field id="client_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Client Id</label>
+                    <comment>enter the google analytics client id here</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

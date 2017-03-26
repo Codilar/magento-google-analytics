@@ -59,6 +59,7 @@
 
 <script>
 
+    require(['jquery', 'gaChart', 'moment', 'gaViewSelector', 'gaDateRange', 'gaActiveUser'], function ($, gaChart, moment) {
     // == NOTE ==
     // This code uses ES6 promises. If you want to use this code in a browser
     // that doesn't supporting promises natively, you'll have to include a polyfill.
@@ -72,7 +73,7 @@
          */
         gapi.analytics.auth.authorize({
             container: 'embed-api-auth-container',
-            clientid: '938526124221-appkmm3pd0n28rs1t4b4tam59lm3cq2n.apps.googleusercontent.com'
+            clientid: '<?php echo $block->getClientId(); ?>'
         });
 
 
@@ -402,5 +403,6 @@
             return div.innerHTML;
         }
 
+    });
     });
 </script>

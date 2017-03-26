@@ -10,11 +10,25 @@ use Magento\Backend\Block\Template;
  */
 class Analytics extends  Template
 {
+
     /**
-     * @return $this
+     * Analytics constructor.
+     * @param Template\Context $context
+     * @param array $data
      */
-    public function _prepareLayout()
+    public function __construct(
+        Template\Context $context,
+        array $data = []
+    )
     {
-        return parent::_prepareLayout();
+        parent::__construct($context, $data);
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->_scopeConfig->getValue('codilar_analytics/analytics/client_id');
     }
 }

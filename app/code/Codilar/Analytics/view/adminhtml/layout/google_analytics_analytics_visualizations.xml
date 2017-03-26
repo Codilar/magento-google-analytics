@@ -9,11 +9,6 @@
 <update handle="formkey"/>
     <head>
         <link src="Codilar_Analytics::js/embed-api.js"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js" src_type="url"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js" src_type="url"/>
-        <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/view-selector2.js" src_type="url"/>
-        <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/date-range-selector.js" src_type="url"/>
-        <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/active-users.js" src_type="url"/>
         <css src="Codilar_Analytics::css/chartjs-visualizations.css"/>
     </head>
 <body>
