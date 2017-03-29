@@ -5,9 +5,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
     <menu>
         <add id="Codilar_Analytics::Analytics" title="Analytics" module="Codilar_Analytics" sortOrder="20" resource="Codilar_Analytics::Analytics" />
-        <add id="Codilar_Csvupload::single_view" title="Single View" module="Codilar_Analytics" sortOrder="10" action="Google_Analytics/Analytics" resource="Codilar_Analytics::Analytics" parent="Codilar_Analytics::Analytics" />
-        <add id="Codilar_Csvupload::multi_view" title="Multi View" module="Codilar_Analytics" sortOrder="10" action="Google_Analytics/Analytics/Multiview" resource="Codilar_Analytics::Analytics" parent="Codilar_Analytics::Analytics" />
-        <add id="Codilar_Csvupload::custom_components" title="Custom Components" module="Codilar_Analytics" sortOrder="10" action="Google_Analytics/Analytics/CustomComponents" resource="Codilar_Analytics::Analytics" parent="Codilar_Analytics::Analytics" />
-        <add id="Codilar_Csvupload::custom_visualizations" title="Custom Visualizations" module="Codilar_Analytics" sortOrder="10" action="Google_Analytics/Analytics/Visualizations" resource="Codilar_Analytics::Analytics" parent="Codilar_Analytics::Analytics" />
+        <add id="Codilar_Analytics::single_view" title="Single View" module="Codilar_Analytics" sortOrder="10" action="Google_Analytics/Analytics" resource="Codilar_Analytics::Analytics" parent="Codilar_Analytics::Analytics" />
+        <add id="Codilar_Analytics::multi_view" title="Multi View" module="Codilar_Analytics" sortOrder="10" action="Google_Analytics/Analytics/Multiview" resource="Codilar_Analytics::Analytics" parent="Codilar_Analytics::Analytics" />
+        <add id="Codilar_Analytics::custom_components" title="Custom Components" module="Codilar_Analytics" sortOrder="10" action="Google_Analytics/Analytics/CustomComponents" resource="Codilar_Analytics::Analytics" parent="Codilar_Analytics::Analytics" />
+        <add id="Codilar_Analytics::custom_visualizations" title="Custom Visualizations" module="Codilar_Analytics" sortOrder="10" action="Google_Analytics/Analytics/Visualizations" resource="Codilar_Analytics::Analytics" parent="Codilar_Analytics::Analytics" />
     </menu>
 </config>
